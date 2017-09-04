@@ -1,20 +1,20 @@
-<h1 align="center">Laravel-Parsedown</h1>
+<h1 align="center">Laravel-Parsehtml</h1>
 
 <p align="center">
-<a href="https://scrutinizer-ci.com/g/yansongda/laravel-parsedown/?branch=master"><img src="https://scrutinizer-ci.com/g/yansongda/laravel-parsedown/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
-<a href="https://scrutinizer-ci.com/g/yansongda/laravel-parsedown/build-status/master"><img src="https://scrutinizer-ci.com/g/yansongda/laravel-parsedown/badges/build.png?b=master" alt="Build Status"></a>
-<a href="https://packagist.org/packages/yansongda/laravel-parsedown"><img src="https://poser.pugx.org/yansongda/laravel-parsedown/v/stable" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/yansongda/laravel-parsedown"><img src="https://poser.pugx.org/yansongda/laravel-parsedown/downloads" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/yansongda/laravel-parsedown"><img src="https://poser.pugx.org/yansongda/laravel-parsedown/v/unstable" alt="Latest Unstable Version"></a>
-<a href="https://packagist.org/packages/yansongda/laravel-parsedown"><img src="https://poser.pugx.org/yansongda/laravel-parsedown/license" alt="License"></a>
+<a href="https://scrutinizer-ci.com/g/yansongda/laravel-parsehtml/?branch=master"><img src="https://scrutinizer-ci.com/g/yansongda/laravel-parsehtml/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
+<a href="https://scrutinizer-ci.com/g/yansongda/laravel-parsehtml/build-status/master"><img src="https://scrutinizer-ci.com/g/yansongda/laravel-parsehtml/badges/build.png?b=master" alt="Build Status"></a>
+<a href="https://packagist.org/packages/yansongda/laravel-parsehtml"><img src="https://poser.pugx.org/yansongda/laravel-parsehtml/v/stable" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/yansongda/laravel-parsehtml"><img src="https://poser.pugx.org/yansongda/laravel-parsehtml/downloads" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/yansongda/laravel-parsehtml"><img src="https://poser.pugx.org/yansongda/laravel-parsehtml/v/unstable" alt="Latest Unstable Version"></a>
+<a href="https://packagist.org/packages/yansongda/laravel-parsehtml"><img src="https://poser.pugx.org/yansongda/laravel-parsehtml/license" alt="License"></a>
 </p>
 
-This Package depends on [erusev/parsedown](https://github.com/erusev/parsedown)  
+This Package depends on [league/html-to-markdown](https://github.com/thephpleague/html-to-markdown)  
 
 ## Installation
 
 ```shell
-$ composer require yansongda/laravel-parsedown
+$ composer require yansongda/laravel-parsehtml
 ```
 
 ### Add service provider
@@ -22,7 +22,7 @@ $ composer require yansongda/laravel-parsedown
 ```php
 <?php
 
-Yansongda\LaravelParasedown\ParsedownServiceProvider::class,
+Yansongda\LaravelParasedown\ParsehtmlServiceProvider::class,
 ```
 
 ### Add alias
@@ -30,22 +30,24 @@ Yansongda\LaravelParasedown\ParsedownServiceProvider::class,
 ```php
 <?php
 
-'LaravelParsedown' => Yansongda\LaravelParsedown\Facades\Parsedown::class,
+'LaravelParsehtml' => Yansongda\LaravelParsehtml\Facades\Parsehtml::class,
 ```
 
 ### Config(OPTION)
 
 ```shell
-$ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsedownServiceProvider" --tag=config
+$ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsehtmlServiceProvider" --tag=config
 ```
 
 |     config    |            desc            |
 | :-----------: | :------------------------: |
-| breaksEnabled | automatic line breaks      |
-| markupEscaped | escapes markup (HTML)      |
-| urlsLinked    | automatic linking of URLs  |
+| strip_tags | strip HTML tags that don't have a Markdown equivalent      |
+| remove_nodes | strip tags and their content      |
+| italic_style  |    |
+| bold_style |        |
+| hard_break    |   |
 
-Reference: [erusev/parsedown](https://github.com/erusev/parsedown/wiki/Tutorial:-Get-Started)
+Reference: [league/html-to-markdown](https://github.com/thephpleague/html-to-markdown)
 
 ## Usage
 
@@ -53,14 +55,14 @@ Reference: [erusev/parsedown](https://github.com/erusev/parsedown/wiki/Tutorial:
 ```php
 <?php
 
-@parsedown('## h2');
+@parsehtml('<h2>blablabla</h2>');
 ```
 
 ### Using Helper
 ```php
 <?php
 
-{{ parsedown('## h2') }}
+{{ parsehtml('<h2>blablabla</h2>') }}
 ```
 
 ## License
