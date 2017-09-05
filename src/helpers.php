@@ -2,7 +2,7 @@
 
 if (! function_exists('parsehtml')) {
     /**
-     * convert markdown to html
+     * convert html to markdown
      *
      * @author yansongda <me@yansongda.cn>
      *
