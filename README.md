@@ -39,13 +39,14 @@ Yansongda\LaravelParsedown\ParsehtmlServiceProvider::class,
 $ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsehtmlServiceProvider" --tag=config
 ```
 
-|     config    |            desc            |
-| :-----------: | :------------------------: |
-| strip_tags | strip HTML tags that don't have a Markdown equivalent      |
+|     config   |            desc            |
+| :----------: | :------------------------: |
+| strip_tags   | strip HTML tags that don't have a Markdown equivalent      |
 | remove_nodes | strip tags and their content      |
-| italic_style  |    |
-| bold_style |        |
-| hard_break    |   |
+| italic_style |    |
+| bold_style   |        |
+| hard_break   |   |
+| header_style | atx/etx |
 
 Reference: [league/html-to-markdown](https://github.com/thephpleague/html-to-markdown)
 
