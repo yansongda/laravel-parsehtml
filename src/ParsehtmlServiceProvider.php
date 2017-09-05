@@ -20,13 +20,13 @@ class ParsehtmlServiceProvider extends ServiceProvider
      *
      * @author yansongda <me@yansongda.cn>
      *
-     * @return  void
+     * @return void
      */
     public function boot()
     {
         if (!file_exists(config_path('markdown.php'))) {
             $this->publishes([
-                dirname(__DIR__) . '/config/markdown.php' => config_path('markdown.php'),
+                dirname(__DIR__).'/config/markdown.php' => config_path('markdown.php'),
             ], 'config');
         }
 
@@ -42,7 +42,7 @@ class ParsehtmlServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(dirname(__DIR__) . '/config/markdown.php', 'markdown');
+        $this->mergeConfigFrom(dirname(__DIR__).'/config/markdown.php', 'markdown');
 
         $this->app->singleton(HtmlConverter::class, function ($app) {
             return new HtmlConverter(config('markdown.parsehtml'));
