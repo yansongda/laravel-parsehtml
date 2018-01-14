@@ -1,10 +1,10 @@
 <?php
 
-namespace Yansongda\LaravelParsedown\Facades;
+namespace Yansongda\LaravelParsehtml\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Parsedown extends Facade
+class Parsehtml extends Facade
 {
     /**
      * Return the facade accessor.
