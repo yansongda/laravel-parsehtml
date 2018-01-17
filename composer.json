@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "illuminate/support": "^5.1",
+        "illuminate/support": "^5.3",
         "league/html-to-markdown": "~4.4"
     },
     "autoload": {
