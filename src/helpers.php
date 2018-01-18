@@ -12,6 +12,6 @@ if (!function_exists('parsehtml')) {
      */
     function parsehtml($expression)
     {
-        return resolve('parsehtml')->convert($expression);
+        return app('parsehtml')->convert($expression);
     }
 }
