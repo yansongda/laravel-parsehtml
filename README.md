@@ -11,21 +11,30 @@
 
 This Package depends on [league/html-to-markdown](https://github.com/thephpleague/html-to-markdown)  
 
+## Requirement
+
+- composer
+- laravel | lumen >= 5.1
+
 ## Installation
 
 ```shell
 $ composer require yansongda/laravel-parsehtml
 ```
 
-### Add service provider
+### Add service provider(if laravel<5.5 || lumen)
 
 ```php
 <?php
 
 Yansongda\LaravelParsedown\ParsehtmlServiceProvider::class,
+
+// lumen
+// $app->withFacades();
+// $app->register(Yansongda\LaravelParsehtml\ParsehtmlServiceProvider::class);
 ```
 
-### Add alias
+### Add alias(if laravel<5.5)
 
 ```php
 <?php
@@ -36,8 +45,10 @@ Yansongda\LaravelParsedown\ParsehtmlServiceProvider::class,
 ### Config(OPTION)
 
 ```shell
-$ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsehtmlServiceProvider" --tag=config
+$ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsehtmlServiceProvider" --tag=laravel-html-config
 ```
+
+**Lumen user please manually copy the configuration file**
 
 |     config   |            desc            |
 | :----------: | :------------------------: |
