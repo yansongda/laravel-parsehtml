@@ -4,6 +4,8 @@ namespace Yansongda\LaravelParsehtml;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Application as LaravelApplication;
+use Laravel\Lumen\Application as LumenApplication;
 use League\HTMLToMarkdown\HtmlConverter;
 
 class ParsehtmlServiceProvider extends ServiceProvider
@@ -24,10 +26,12 @@ class ParsehtmlServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (!file_exists(config_path('markdown.php'))) {
+        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([
                 dirname(__DIR__).'/config/markdown.php' => config_path('markdown.php'),
-            ], 'config');
+            ], 'laravel-html-config');
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('markdown');
         }
 
         Blade::directive('parsehtml', function ($expression) {
