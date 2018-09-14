@@ -22,7 +22,7 @@ $ composer require yansongda/laravel-parsehtml
 ```php
 <?php
 
-Yansongda\LaravelParsedown\ParsehtmlServiceProvider::class,
+Yansongda\LaravelParsehtml\ParsehtmlServiceProvider::class,
 ```
 
 ### Add alias
@@ -36,7 +36,7 @@ Yansongda\LaravelParsedown\ParsehtmlServiceProvider::class,
 ### Config(OPTION)
 
 ```shell
-$ php artisan vendor:publish --provider="Yansongda\\LaravelParsedown\\ParsehtmlServiceProvider" --tag=config
+$ php artisan vendor:publish --provider="Yansongda\\LaravelParsehtml\\ParsehtmlServiceProvider" --tag=config
 ```
 
 |     config   |            desc            |
