@@ -36,7 +36,7 @@ Yansongda\LaravelParsehtml\ParsehtmlServiceProvider::class,
 ### Config(OPTION)
 
 ```shell
-$ php artisan vendor:publish --provider="Yansongda\\LaravelParsehtml\\ParsehtmlServiceProvider" --tag=config
+$ php artisan vendor:publish --provider="Yansongda\\LaravelParsehtml\\ParsehtmlServiceProvider" --tag=laravel-html-config
 ```
 
 |     config   |            desc            |
